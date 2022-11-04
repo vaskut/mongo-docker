@@ -5,6 +5,9 @@ services:
         image: mongo:latest
         container_name: mongodb-local
         restart: always
+        #command: ["--replSet", "replicaSet001", "--bind_ip_all",  "--keyFile", "/keyfile.txt"]
+        #extra_hosts:
+            #- "my-host.my-mongo.com:127.0.0.1"
         environment:
             MONGO_INITDB_ROOT_USERNAME: admin
             MONGO_INITDB_ROOT_PASSWORD: password
@@ -16,3 +19,4 @@ services:
             - ./db:/data/db
             - ./assets:/assets
             - ./starter:/starter
+            #- ./keyfile.txt:/keyfile.txt            
